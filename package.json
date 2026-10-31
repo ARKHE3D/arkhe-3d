@@ -1,0 +1,29 @@
+{
+  "name": "arkhe-3d",
+  "version": "2.0.0",
+  "description": "ARKHE 3D · catálogo v2, investigación de mercado y agente de publicación para WhatsApp, Instagram, Facebook y TikTok",
+  "type": "commonjs",
+  "scripts": {
+    "catalogo": "node sistema/generar-catalogo.mjs",
+    "catalogo:v2": "node sistema/generar-catalogo-v2.mjs",
+    "radar": "node sistema/radar.mjs",
+    "radar:sin-mw": "node sistema/radar.mjs --sin-makerworld",
+    "pdf": "node sistema/pdf.mjs",
+    "pdf:catalogo": "node sistema/pdf.mjs catalogo",
+    "pdf:v2": "node sistema/pdf-v2.mjs",
+    "agente": "node agente-publicador/index.mjs",
+    "agente:listar": "node agente-publicador/index.mjs --listar",
+    "panel": "node agente-publicador/index.mjs --panel",
+    "optimizar": "node sistema/optimizar-imagenes.mjs",
+    "acentuar": "node sistema/acentuar.mjs",
+    "ci:catalogo": "npm run catalogo:v2 && npm run pdf:v2",
+    "ci:agente": "npm run agente -- --todos --canal WhatsApp,Instagram,Facebook,TikTok",
+    "ci:panel": "npm run panel"
+  },
+  "keywords": ["3d printing", "catalogo", "makerworld", "printables"],
+  "author": "ARKHE 3D",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "playwright-core": "^1.64.1"
+  }
+}
